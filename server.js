@@ -1,47 +1,56 @@
-const dbd = require("dbd.js")
- 
+/*
+	DBD.js example code
+	See the docs at https://dbd.leref.ga
+	NPM site at https://npmjs.com/package/dbd.js
+	Discord Support Server at https://discord.gg/HMUfMXDQsV
+	Install the module by using npm i dbd.js
+*/
+
+// import the package
+const dbd = require('dbd.js');
+
+// define the bot instance
 const bot = new dbd.Bot({
-token: "TOKEN", 
-prefix: "!" 
-})
+	token: 'your bot token here',
+	prefix: '!'
+});
 
-bot.onMessage()
-//commands
+// trigger the message event so the bot will respond to commands
+bot.onMessage();
+
+// add commands to the bot
+bot.command({
+	name: 'ping',
+	code: `Pong! \`$ping\``
+});
 
 bot.command({
-name: "ping", 
-code: `Pong! \`$ping\`` 
-})
+	name: 'trigger',
+	code: `triggered owo`
+});
 
-bot.command({
-name: "trigger", 
-code: `code` 
-})
-
-//status
+/*
+	Sets the bot status
+	Read more information about setting statuses at
+	https://dbd.leref.ga/guide/bot-status
+*/
+bot.status({
+	text: 'Bot is running!',
+	type: 'PLAYING',
+	time: 12
+});
 
 bot.status({
-  text: "Bot is running!",
-  type: "PLAYING",
-  time: 12
-})
+	text: 'Status changed!',
+	type: 'PLAYING',
+	status: 'idle',
+	time: 12
+});
 
-bot.status({
-  text: "Changed of Status!",
-  type: "PLAYING",
-  status: "idle",
-  time: 12
-})
-
-//Read more information about status in docs:
-//https://dbd.leref.ga/guide/bot-status
-
-//variables
-
+// bot variables (variables are accessable anywhere)
 bot.variables({
-    Name: "Value",
-    Name2: "Value2"
-  })
+	Name: 'Value1',
+	Name2: 'another value'
+});
 
-//You can add more variables :)
-//Join our Support Server & read Documentation for help :)
+// join the support server for help and suggestions <3
