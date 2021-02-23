@@ -1,7 +1,7 @@
 const dbd = require("dbd.js")
  
 const bot = new dbd.Bot({
-sharding: false, //true or false 
+  sharding: false, //true or false 
   shardAmount: 2, //Shard amount 
   mobile: false, //true or false - Discord Mobile Status
   //dbhToken: "API KEY", Remove // if using, get an API Key from their Server
