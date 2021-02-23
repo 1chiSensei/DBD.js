@@ -1,8 +1,12 @@
 const dbd = require("dbd.js")
  
 const bot = new dbd.Bot({
-token: "TOKEN", 
-prefix: "!" 
+sharding: false, //true or false 
+  shardAmount: 2, //Shard amount 
+  mobile: false, //true or false - Discord Mobile Status
+  //dbhToken: "API KEY", Remove // if using, get an API Key from their Server
+  token: "TOKEN", //Discord Bot Token
+  prefix: ["PREFIX"] //Change PREFIX to your Prefix
 })
 
 bot.onMessage()
@@ -14,8 +18,8 @@ code: `Pong! \`$ping\``
 })
 
 bot.command({
-name: "trigger", 
-code: `code` 
+name: "hello", //Command Name
+code: `Hello <@$authorID>` //Code inside of ``
 })
 
 //status
@@ -39,7 +43,7 @@ bot.status({
 //variables
 
 bot.variables({
-    Name: "Value",
+    Name: "Value", 
     Name2: "Value2"
   })
 
