@@ -1,34 +1,78 @@
   <br />
     <p>
-    <a href="https://dbd.leref.ga"><img src="https://cdn.discordapp.com/attachments/773364744240496640/797696404146880512/logo-svg.png" alt="dbd.js" /></a>
+    <a href="https://dbd.leref.ga"><img src="https://cdn.discordapp.com/attachments/804505335397744650/816746774571515914/dbdjs.png" alt="dbd.js" /></a>
   </p>
 
 # DBD.JS
-# This Package, allows you to make Discord Bot with ease!
-## Are you Familiar with BDFD aka Bot Designer for Discord?
-### Then you can easily transfer your code into this Package with no issues!
+[![NPM Downloads](https://img.shields.io/npm/dt/dbd.js.svg?maxAge=3600)](https://www.npmjs.com/package/dbd.js)
+[![Discord Server](https://img.shields.io/discord/773352845738115102?color=7289da&logo=discord&logoColor=white)](https://dbd.js.org/invite)
+
+## Table Of Contents
+- [About](#about)
+  - [Setup](#setup)
+  - [Variables](#variables)
+  - [Events / Callbacks](#callbacks)
+- [Additional Support](#methods)
+  - [Slash Commands](#slash-commands)
+  - [Music](#music)
+- [Links](#links)
 
 
- <a href="https://discord.gg/HMUfMXDQsV"><img src="https://discordapp.com/api/guilds/773352845738115102/embed.png" alt="Discord server" /></a>
+## About
+DBD.JS is a package that aim to allows you to make your Discord Bots with Ease.
 
-### Example Usage
+Aiming to be the easiest package to learn <br>
+It's swift and flexible using functions </br>
 
+## Examples
+
+### Setup
 ```js
 const dbd = require("dbd.js")
 
 const bot = new dbd.Bot({
-token: "TOKEN", 
-prefix: "!" 
+token: "TOKEN", //Discord Bot Token
+prefix: "!" //Customizable
 })
-bot.onMessage()
+bot.onMessage() //Allows to run Commands
 
 bot.command({
-name: "ping", 
-code: `$ping Pong!` 
+name: "ping", //Trigger name (command name)
+code: `$ping Pong!` //Code
 })
 ```
 
-## Slash Commands Support
+### Variables
+
+What are variables? They can be used for many things, especially allowing to save data.
+
+This allows to create potential currency system, level system, etc.
+
+```js
+bot.variables({
+  VariableName1: "Value", //Returns "Value"
+  VariableName2: "Value2" //Returns "Value2"
+})
+```
+
+### Callbacks
+
+What are callbacks?
+
+It's simple and easy process, it essentially allows you to run events, such as user joining a Guild.
+This will trigger a event, causing a code to be executed such as.
+
+```js
+bot.joinCommand({
+        channel: "Channel ID", //Enter a Channel ID
+        code: `<@$authorID> just joined, welcome!` //This can be changed
+})
+bot.onJoined()
+```
+
+## Additional Support
+
+### Slash Commands
 
 With easy and simple functions, you can make Slash Commands with your Bots quick!
 
@@ -46,64 +90,26 @@ bot.onInteractionCreate()
 
 More Information in our [Documentation](https://dbd.leref.ga/guide/slash-commands)
 
-## Music Support
+#### Music
 
 With our powerful Package, we incorporated Music with several functions.
-We allowed customization and control, over what you want.
+We allowed customization and control over what you want.
 
 
-## Music Function Examples
+#### Music Setup Example
 
 ```js
-$playSong - $playSong[song;leave vc time;defean (yes or no);error message]
-$skipSong - Skip the current song in queue.
-$stopSong - Stop all songs in queue.
-$loopQueue - Loop all songs in queue.
-$skipTo - Skip to a song in the current queue.
+bot.command({
+name: "play", //Trigger name (command name)
+code: `$playSong[song;leave vc time;defean (yes or no);leave when vc empty (yes/no);error]`
+//Code
+})
 ```
+
 More Information in our [Documentation](https://dbd.leref.ga/guide/music)
 
-### Using Variables
-
-What are variables? They can be used for many things, especially allowing to save data.
-
-Such as allowing level system, currency system and much more!
-
-```js
-bot.variables({
-  Name: "Value",
-  Name2: "Value2"
-})
-```
-
-### Callbacks
-
-What are callbacks?
-
-It's simple and easy process, it essentially allows you to run events, such as user joining a Guild.
-This will trigger a event, causing a code to be executed such as.
-
-```js
-bot.joinCommand({
-        channel: "Channel ID", 
-        code: `<@$authorID> just joined, welcome!`
-})
-bot.onJoined()
-```
-
-### Setting Bot Status
-
-Add a custom message to your Bot Activity!
-
-```js
-bot.status({
-  text: "TEXT",
-  type: "PLAYING",
-  time: 12
-})
-```
-## Support
-
-If you don't understand something, confused, bug reports, errors, or need assistance. Join our [Official DBD.JS Official Support Server](https://discord.gg/HMUfMXDQsV)
-
-[Documentation](https://dbd.leref.ga)
+## Links
+DBD.JS was made by [DBD.JS Team](https://discord.gg/HMUfMXDQsV)
+- [Website](https://dbd.js.org)
+- [Discord Server](https://dbd.js.org/invite)
+- [Documentation](https://dbd.leref.ga)
